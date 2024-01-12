@@ -1,58 +1,59 @@
 // Assignment code here
 function generatePassword() {
-    var length = prompt("Enter the number of characters preferred(between 8 and 128:)");
+  var length = prompt("Enter the number of characters preferred(between 8 and 128:)");
   // ensuring the right password length is wored
     while(length<8 || length>128 || isNaN(length)) {
       alert("You number does not meet the requirements");
       length = prompt("Enter the number of characters preferred(between 8 and 128:)");
     }
     // declare variables for user input
-   var lowerCase = confirm("Do you want to use lowercase letters?");
-   var upperCase = confirm("Do you want to use uppercase letters?");
-   var numeral = confirm("Do you want to use numbers?");
-   var specialCharc = confirm("Do you want to use special characters?");
+  var lowerCase = confirm("Do you want to use lowercase letters? Cancel is No");
+  var upperCase = confirm("Do you want to use uppercase letters? Cancel is No");
+  var numeral = confirm("Do you want to use numbers? Cancel is No");
+  var specialCharc = confirm("Do you want to use special characters? Cancel is No");
   //  ensure that at least one of the character types has been selected
   while(!(lowerCase || upperCase || numeral || specialCharc)) {
-    prompt("Please select at least one character type");
-    var lowerCase = confirm("Do you want to use lowercase letters?");
-    var upperCase = confirm("Do you want to use uppercase letters?");
-    var numeral = confirm("Do you want to use numbers?");
-    var specialCharc = confirm("Do you want to use special characters?");
+    prompt("Please select at least one character type, OK to continue");
+    var lowerCase = confirm("Do you want to use lowercase letters? Cancel is No");
+    var upperCase = confirm("Do you want to use uppercase letters? Cancel is No");
+    var numeral = confirm("Do you want to use numbers? Cancel is No");
+    var specialCharc = confirm("Do you want to use special characters? Cancel is No");
   }
-  // Formulate secure password based on user input
-    var securePassword = generateSecurePassword(length, lowerCase, upperCase, numeral, specialCharc); 
+  // Variable declared Formulate secure password based on user input
+  var securePassword = generateSecurePassword(length, lowerCase, upperCase, numeral, specialCharc); 
 
-     alert("Your secure password is: " += securePassword);
- 
-   function generateSecurePassword(length, lowerCase, upperCase, numeral, specialCharc) { 
-   var charSet = ''
-   var lowerCharSet = "abcdefghijklmnopqrstuvwxyz";
-   var upperCharset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-   var numeralCharset = "0123456789";
-   var specialCharset = "!@#$%^&*()-_=+[]{}|;:'\",.<>/?";
+  alert("Your secure password is: " + securePassword);
+//  function to generate password based on used 
+  function generateSecurePassword(length, lowerCase, upperCase, numeral, specialCharc) { 
+    var charSet = ''
+    var lowerCharSet = "abcdefghijklmnopqrstuvwxyz";
+    var upperCharset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var numeralCharset = "0123456789";
+    var specialCharset = "!@#$%^&*()-_=+[]{}|;:'\",.<>/?";
 
   //  if to build characters based on selected options
-   if (lowerCase) {
-    charSet += lowerCharSet;
+    if (lowerCase) {
+      charSet += lowerCharSet;
    }
-   if (upperCase) {
-    charSet += upperCharset;
+    if (upperCase) {
+      charSet += upperCharset;
    }
-   if (numeral) {
-    charSet += numeralCharset;
+    if (numeral) {
+      charSet += numeralCharset;
    }
-   if (specialCharc) {
-    charSet += specialCharset;
+    if (specialCharc) {
+      charSet += specialCharset;
    }
 
-   var password = '';
+    var password = '';
 
-   for (var i = 0; i < length; i++) {
-    var randomSelect = Math.floor(Math.random() * charSet.length);
-    password += charSet[randomSelect];
+    for (var i = 0; i < length; i++) {
+      var randomSelect = Math.floor(Math.random() * charSet.length);
+      password += charSet[randomSelect];
    }
-   return password;
+    return password;
   }
+  return securePassword;
 }
   
   // Get references to the #generate element
