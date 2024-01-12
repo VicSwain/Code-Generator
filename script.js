@@ -3,7 +3,7 @@ function generatePassword() {
   var length = prompt("Enter the number of characters preferred(between 8 and 128:)");
   // ensuring the right password length is wored
     while(length<8 || length>128 || isNaN(length)) {
-      alert("You number does not meet the requirements,");
+      alert("You number does not meet the requirements");
       length = prompt("Enter the number of characters preferred(between 8 and 128:)");
     }
     // declare variables for user input
