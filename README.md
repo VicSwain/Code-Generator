@@ -1,23 +1,14 @@
-# Password Generator Starter Code
+# Password Generator 
 
-## User Story
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
+## Description
+This is a random and secure password generator based on minimal requirements, as well as a list of option the user can choose from. The purpose of this is to better understand and practice JavaScript logic, focusing on the use of funtions, loops, and methods for the desired result.  The parameters of the password is that the length be at least 8 characters and no more than 128. Following that, the user can pick from upper case, lower case, numbers, and/or special characters to be used in the generation. This was 
 
-### Acceptance Criteria 
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the pageModule 3 Challenge
+### Credits
+I received guidance from my TA Nick S, as well as class support from Maury Hughes and Jorden Heersink. I also worked with multiple learning assistants through BCS to ensure my understanding. 
+
+
+#### Screenshot
+![Webpage Screenshot](Password-Generator.jpeg)
+
+### URL
+https://vicswain.github.io/Password-Generator/

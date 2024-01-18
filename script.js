@@ -1,17 +1,17 @@
 // Assignment code here
 function generatePassword() {
   var length = prompt("Enter the number of characters preferred(between 8 and 128:)");
-  // ensuring the right password length is wored
+  // while loop to ensure the length entered by the user meets requirements
     while(length<8 || length>128 || isNaN(length)) {
       alert("You number does not meet the requirements");
       length = prompt("Enter the number of characters preferred(between 8 and 128:)");
     }
-    // declare variables for user input
+    // variables declared to store user selection
   var lowerCase = confirm("Do you want to use lowercase letters? Cancel is No");
   var upperCase = confirm("Do you want to use uppercase letters? Cancel is No");
   var numeral = confirm("Do you want to use numbers? Cancel is No");
   var specialCharc = confirm("Do you want to use special characters? Cancel is No");
-  //  ensure that at least one of the character types has been selected
+  //  while loop to ensure the user selects at least one of the four character types
   while(!(lowerCase || upperCase || numeral || specialCharc)) {
     prompt("Please select at least one character type, OK to continue");
     var lowerCase = confirm("Do you want to use lowercase letters? Cancel is No");
@@ -19,19 +19,20 @@ function generatePassword() {
     var numeral = confirm("Do you want to use numbers? Cancel is No");
     var specialCharc = confirm("Do you want to use special characters? Cancel is No");
   }
-  // Variable declared Formulate secure password based on user input
+  // variable declared to store the result of the function with list of parameters
   var securePassword = generateSecurePassword(length, lowerCase, upperCase, numeral, specialCharc); 
-
+// Pop to screen to show user's secure password
   alert("Your secure password is: " + securePassword);
-//  function to generate password based on used 
+//  function to generate user secure password
   function generateSecurePassword(length, lowerCase, upperCase, numeral, specialCharc) { 
     var charSet = ''
+    // list of variable to store character options
     var lowerCharSet = "abcdefghijklmnopqrstuvwxyz";
     var upperCharset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var numeralCharset = "0123456789";
     var specialCharset = "!@#$%^&*()-_=+[]{}|;:'\",.<>/?";
 
-  //  if to build characters based on selected options
+  //  series of if statements to add characters based on user selection
     if (lowerCase) {
       charSet += lowerCharSet;
    }
@@ -44,15 +45,16 @@ function generatePassword() {
     if (specialCharc) {
       charSet += specialCharset;
    }
-
+// null variable declared to store password after generation
     var password = '';
-
+// for loop to iterate the length of of user password and input characters based on criteria selection
     for (var i = 0; i < length; i++) {
       var randomSelect = Math.floor(Math.random() * charSet.length);
       password += charSet[randomSelect];
    }
     return password;
   }
+  // return password to sercure password to be able to write to the the box on the screen
   return securePassword;
 }
   
